@@ -34,6 +34,9 @@ jobs:
           path: build/reports
       - store_test_results:
           path: build/test-results/
+      - deploy:
+          name: Deploy artifacts
+          command: ./gradlew bintrayUpload
 
 workflows:
   version: 2
