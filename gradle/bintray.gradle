@@ -1,0 +1,25 @@
+if (System.env.BINTRAY_USER && System.env.BINTRAY_KEY) {
+	bintray {
+		user = System.env.BINTRAY_USER
+		key = System.env.BINTRAY_KEY
+		publications = ["mavenJava"]
+		dryRun = System.env.CIRCLE_BRANCH != "master"
+		publish = true
+		pkg {
+			userOrg = "ws2ten1"
+			repo = "maven-release"
+			name = project.name
+			desc = project.description
+			websiteUrl = "https://github.com/ws2ten1/ws2ten1-httpexceptions"
+			issueTrackerUrl = "https://github.com/ws2ten1/ws2ten1-httpexceptions/issues"
+			vcsUrl = "https://github.com/ws2ten1/ws2ten1-httpexceptions.git"
+			licenses = ["Apache-2.0"]
+			labels = ["ws2ten1", "Spring framework"]
+			githubRepo = 'ws2ten1/ws2ten1-httpexceptions'
+			version {
+				name = project.version
+				vcsTag = project.version
+			}
+		}
+	}
+}
