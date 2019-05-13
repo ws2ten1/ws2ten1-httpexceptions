@@ -33,7 +33,6 @@ public class HttpInternalServerErrorException extends HttpResponseException {
 	 *
 	 * @param message the detail message
 	 * @param cause the cause
-	 * @since 0.3
 	 */
 	public HttpInternalServerErrorException(String message, Throwable cause) {
 		super(message, cause);
@@ -43,7 +42,6 @@ public class HttpInternalServerErrorException extends HttpResponseException {
 	 * Create instance.
 	 *
 	 * @param message the detail message
-	 * @since 0.3
 	 */
 	public HttpInternalServerErrorException(String message) {
 		super(message);

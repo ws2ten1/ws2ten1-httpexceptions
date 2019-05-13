@@ -33,7 +33,6 @@ public class HttpForbiddenException extends HttpResponseException {
 	 *
 	 * @param message the detail message
 	 * @param cause the cause
-	 * @since 0.9
 	 */
 	public HttpForbiddenException(String message, Throwable cause) {
 		super(message, cause);
@@ -43,7 +42,6 @@ public class HttpForbiddenException extends HttpResponseException {
 	 * Create instance.
 	 *
 	 * @param message the detail message
-	 * @since 0.9
 	 */
 	public HttpForbiddenException(String message) {
 		super(message);
@@ -53,7 +51,6 @@ public class HttpForbiddenException extends HttpResponseException {
 	 * Create instance.
 	 *
 	 * @param cause the cause
-	 * @since 0.9
 	 */
 	public HttpForbiddenException(Throwable cause) {
 		super(cause);
