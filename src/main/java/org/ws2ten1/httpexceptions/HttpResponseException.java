@@ -15,14 +15,17 @@
  */
 package org.ws2ten1.httpexceptions;
 
-import lombok.NoArgsConstructor;
+import lombok.Getter;
 
 /**
  * Base class for HTTP exceptions.
  */
 @SuppressWarnings("serial") // -@cs[AbstractClassName]
-@NoArgsConstructor
 public abstract class HttpResponseException extends RuntimeException {
+	
+	@Getter
+	private final String message;
+	
 	
 	/**
 	 * Create instance.
@@ -32,6 +35,7 @@ public abstract class HttpResponseException extends RuntimeException {
 	 */
 	public HttpResponseException(String message, Throwable cause) {
 		super(message, cause);
+		this.message = message;
 	}
 	
 	/**
@@ -41,6 +45,7 @@ public abstract class HttpResponseException extends RuntimeException {
 	 */
 	public HttpResponseException(String message) {
 		super(message);
+		this.message = message;
 	}
 	
 	/**
@@ -50,5 +55,14 @@ public abstract class HttpResponseException extends RuntimeException {
 	 */
 	public HttpResponseException(Throwable cause) {
 		super(cause);
+		this.message = cause == null ? null : cause.getMessage();
+	}
+	
+	/**
+	 * Create instance.
+	 */
+	public HttpResponseException() {
+		super();
+		this.message = null; // NOPMD
 	}
 }

@@ -44,7 +44,6 @@ public class HttpTooManyRequestsException extends HttpResponseException {
 	 *
 	 * @param message exception message
 	 * @param cause cause of exception
-	 * @since 0.26
 	 */
 	public HttpTooManyRequestsException(String message, Throwable cause) {
 		super(message, cause);
@@ -54,7 +53,6 @@ public class HttpTooManyRequestsException extends HttpResponseException {
 	 * Create instance with detailed message.
 	 *
 	 * @param message exception message
-	 * @since 0.26
 	 */
 	public HttpTooManyRequestsException(String message) {
 		super(message);
@@ -64,7 +62,6 @@ public class HttpTooManyRequestsException extends HttpResponseException {
 	 * Create instance with cause.
 	 *
 	 * @param cause cause of exception
-	 * @since 0.26
 	 */
 	public HttpTooManyRequestsException(Throwable cause) {
 		super(cause);

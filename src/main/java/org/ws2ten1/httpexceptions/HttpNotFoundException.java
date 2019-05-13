@@ -33,7 +33,6 @@ public class HttpNotFoundException extends HttpResponseException {
 	 *
 	 * @param message the detail message
 	 * @param cause the cause
-	 * @since 0.3
 	 */
 	public HttpNotFoundException(String message, Throwable cause) {
 		super(message, cause);
@@ -43,7 +42,6 @@ public class HttpNotFoundException extends HttpResponseException {
 	 * Create instance.
 	 *
 	 * @param message the detail message
-	 * @since 0.3
 	 */
 	public HttpNotFoundException(String message) {
 		super(message);
@@ -53,7 +51,6 @@ public class HttpNotFoundException extends HttpResponseException {
 	 * Create instance.
 	 *
 	 * @param cause the cause
-	 * @since 0.3
 	 */
 	public HttpNotFoundException(Throwable cause) {
 		super(cause);
