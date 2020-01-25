@@ -13,20 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.ws2ten1.httpexceptions;
+package org.polycreo.httpexceptions;
 
-import lombok.NoArgsConstructor;
-
-import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.ResponseStatus;
+import lombok.Getter;
 
 /**
- * Exception to respond HTTP status 404.
+ * Base class for HTTP exceptions.
  */
-@SuppressWarnings("serial")
-@NoArgsConstructor
-@ResponseStatus(HttpStatus.NOT_FOUND)
-public class HttpNotFoundException extends HttpResponseException {
+@SuppressWarnings("serial") // -@cs[AbstractClassName]
+public abstract class HttpResponseException extends RuntimeException {
+	
+	@Getter
+	private final String message;
+	
 	
 	/**
 	 * Create instance.
@@ -34,8 +33,9 @@ public class HttpNotFoundException extends HttpResponseException {
 	 * @param message the detail message
 	 * @param cause the cause
 	 */
-	public HttpNotFoundException(String message, Throwable cause) {
+	public HttpResponseException(String message, Throwable cause) {
 		super(message, cause);
+		this.message = message;
 	}
 	
 	/**
@@ -43,8 +43,9 @@ public class HttpNotFoundException extends HttpResponseException {
 	 *
 	 * @param message the detail message
 	 */
-	public HttpNotFoundException(String message) {
+	public HttpResponseException(String message) {
 		super(message);
+		this.message = message;
 	}
 	
 	/**
@@ -52,7 +53,16 @@ public class HttpNotFoundException extends HttpResponseException {
 	 *
 	 * @param cause the cause
 	 */
-	public HttpNotFoundException(Throwable cause) {
+	public HttpResponseException(Throwable cause) {
 		super(cause);
+		this.message = cause == null ? null : cause.getMessage();
+	}
+	
+	/**
+	 * Create instance.
+	 */
+	public HttpResponseException() {
+		super();
+		this.message = null; // NOPMD
 	}
 }

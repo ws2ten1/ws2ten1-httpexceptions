@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.ws2ten1.httpexceptions;
+package org.polycreo.httpexceptions;
 
 import lombok.NoArgsConstructor;
 
@@ -21,12 +21,12 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 /**
- * Exception to respond HTTP status 403.
+ * Exception to respond HTTP status 400.
  */
 @SuppressWarnings("serial")
 @NoArgsConstructor
-@ResponseStatus(HttpStatus.FORBIDDEN)
-public class HttpForbiddenException extends HttpResponseException {
+@ResponseStatus(HttpStatus.BAD_REQUEST)
+public class HttpBadRequestException extends HttpResponseException {
 	
 	/**
 	 * Create instance.
@@ -34,7 +34,7 @@ public class HttpForbiddenException extends HttpResponseException {
 	 * @param message the detail message
 	 * @param cause the cause
 	 */
-	public HttpForbiddenException(String message, Throwable cause) {
+	public HttpBadRequestException(String message, Throwable cause) {
 		super(message, cause);
 	}
 	
@@ -43,7 +43,7 @@ public class HttpForbiddenException extends HttpResponseException {
 	 *
 	 * @param message the detail message
 	 */
-	public HttpForbiddenException(String message) {
+	public HttpBadRequestException(String message) {
 		super(message);
 	}
 	
@@ -52,7 +52,7 @@ public class HttpForbiddenException extends HttpResponseException {
 	 *
 	 * @param cause the cause
 	 */
-	public HttpForbiddenException(Throwable cause) {
+	public HttpBadRequestException(Throwable cause) {
 		super(cause);
 	}
 }

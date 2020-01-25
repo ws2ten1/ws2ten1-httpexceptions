@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.ws2ten1.httpexceptions;
+package org.polycreo.httpexceptions;
 
 import lombok.NoArgsConstructor;
 
@@ -21,12 +21,12 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 /**
- * Exception to respond HTTP status 422.
+ * Exception to respond HTTP status 409.
  */
 @SuppressWarnings("serial")
 @NoArgsConstructor
-@ResponseStatus(HttpStatus.UNPROCESSABLE_ENTITY)
-public class HttpUnprocessableEntityException extends HttpResponseException {
+@ResponseStatus(HttpStatus.CONFLICT)
+public class HttpConflictException extends HttpResponseException {
 	
 	/**
 	 * Create instance.
@@ -34,7 +34,7 @@ public class HttpUnprocessableEntityException extends HttpResponseException {
 	 * @param message the detail message
 	 * @param cause the cause
 	 */
-	public HttpUnprocessableEntityException(String message, Throwable cause) {
+	public HttpConflictException(String message, Throwable cause) {
 		super(message, cause);
 	}
 	
@@ -43,7 +43,7 @@ public class HttpUnprocessableEntityException extends HttpResponseException {
 	 *
 	 * @param message the detail message
 	 */
-	public HttpUnprocessableEntityException(String message) {
+	public HttpConflictException(String message) {
 		super(message);
 	}
 	
@@ -52,7 +52,7 @@ public class HttpUnprocessableEntityException extends HttpResponseException {
 	 *
 	 * @param cause the cause
 	 */
-	public HttpUnprocessableEntityException(Throwable cause) {
+	public HttpConflictException(Throwable cause) {
 		super(cause);
 	}
 }

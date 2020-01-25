@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.ws2ten1.httpexceptions;
+package org.polycreo.httpexceptions;
 
 import lombok.NoArgsConstructor;
 
@@ -21,12 +21,12 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 /**
- * Exception to respond HTTP status 500.
+ * Exception to respond HTTP status 410.
  */
 @SuppressWarnings("serial")
 @NoArgsConstructor
-@ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
-public class HttpInternalServerErrorException extends HttpResponseException {
+@ResponseStatus(HttpStatus.GONE)
+public class HttpGoneException extends HttpResponseException {
 	
 	/**
 	 * Create instance.
@@ -34,7 +34,7 @@ public class HttpInternalServerErrorException extends HttpResponseException {
 	 * @param message the detail message
 	 * @param cause the cause
 	 */
-	public HttpInternalServerErrorException(String message, Throwable cause) {
+	public HttpGoneException(String message, Throwable cause) {
 		super(message, cause);
 	}
 	
@@ -43,7 +43,7 @@ public class HttpInternalServerErrorException extends HttpResponseException {
 	 *
 	 * @param message the detail message
 	 */
-	public HttpInternalServerErrorException(String message) {
+	public HttpGoneException(String message) {
 		super(message);
 	}
 	
@@ -51,9 +51,8 @@ public class HttpInternalServerErrorException extends HttpResponseException {
 	 * Create instance.
 	 *
 	 * @param cause the cause
-	 * @since 0.3
 	 */
-	public HttpInternalServerErrorException(Throwable cause) {
+	public HttpGoneException(Throwable cause) {
 		super(cause);
 	}
 }

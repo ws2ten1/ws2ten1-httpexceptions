@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.ws2ten1.httpexceptions;
+package org.polycreo.httpexceptions;
 
 import lombok.NoArgsConstructor;
 
@@ -21,12 +21,12 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 /**
- * Exception to respond HTTP status 401.
+ * Exception to respond HTTP status 503.
  */
 @SuppressWarnings("serial")
 @NoArgsConstructor
-@ResponseStatus(HttpStatus.UNAUTHORIZED)
-public class HttpUnauthorizedException extends HttpResponseException {
+@ResponseStatus(HttpStatus.SERVICE_UNAVAILABLE)
+public class HttpServiceUnavailableException extends HttpResponseException {
 	
 	/**
 	 * Create instance.
@@ -34,7 +34,7 @@ public class HttpUnauthorizedException extends HttpResponseException {
 	 * @param message the detail message
 	 * @param cause the cause
 	 */
-	public HttpUnauthorizedException(String message, Throwable cause) {
+	public HttpServiceUnavailableException(String message, Throwable cause) {
 		super(message, cause);
 	}
 	
@@ -43,7 +43,7 @@ public class HttpUnauthorizedException extends HttpResponseException {
 	 *
 	 * @param message the detail message
 	 */
-	public HttpUnauthorizedException(String message) {
+	public HttpServiceUnavailableException(String message) {
 		super(message);
 	}
 	
@@ -52,7 +52,7 @@ public class HttpUnauthorizedException extends HttpResponseException {
 	 *
 	 * @param cause the cause
 	 */
-	public HttpUnauthorizedException(Throwable cause) {
+	public HttpServiceUnavailableException(Throwable cause) {
 		super(cause);
 	}
 }

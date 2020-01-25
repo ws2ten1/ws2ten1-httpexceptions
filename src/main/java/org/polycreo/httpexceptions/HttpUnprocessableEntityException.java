@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.ws2ten1.httpexceptions;
+package org.polycreo.httpexceptions;
 
 import lombok.NoArgsConstructor;
 
@@ -21,12 +21,12 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 /**
- * Exception to respond HTTP status 400.
+ * Exception to respond HTTP status 422.
  */
 @SuppressWarnings("serial")
 @NoArgsConstructor
-@ResponseStatus(HttpStatus.BAD_REQUEST)
-public class HttpBadRequestException extends HttpResponseException {
+@ResponseStatus(HttpStatus.UNPROCESSABLE_ENTITY)
+public class HttpUnprocessableEntityException extends HttpResponseException {
 	
 	/**
 	 * Create instance.
@@ -34,7 +34,7 @@ public class HttpBadRequestException extends HttpResponseException {
 	 * @param message the detail message
 	 * @param cause the cause
 	 */
-	public HttpBadRequestException(String message, Throwable cause) {
+	public HttpUnprocessableEntityException(String message, Throwable cause) {
 		super(message, cause);
 	}
 	
@@ -43,7 +43,7 @@ public class HttpBadRequestException extends HttpResponseException {
 	 *
 	 * @param message the detail message
 	 */
-	public HttpBadRequestException(String message) {
+	public HttpUnprocessableEntityException(String message) {
 		super(message);
 	}
 	
@@ -52,7 +52,7 @@ public class HttpBadRequestException extends HttpResponseException {
 	 *
 	 * @param cause the cause
 	 */
-	public HttpBadRequestException(Throwable cause) {
+	public HttpUnprocessableEntityException(Throwable cause) {
 		super(cause);
 	}
 }
